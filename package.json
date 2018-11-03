@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "app": "http-server"
+    "app": "http-server -o"
   },
   "dependencies": {
     "animejs": "^2.2.0",
