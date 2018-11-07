@@ -258,6 +258,8 @@ methods: {
                     sum+=parseInt(data[i])
                     divider++
                 }
+                if(i===0) break
+
                 i--
             }
 
@@ -409,7 +411,7 @@ methods: {
     onCharChanged(e) {
         let ev=e.target
         this.log.push('Обновление данных')
-        this.log.push('Готово')
+        
         if(ev.uuid.indexOf('0006')!==-1 || ev.uuid.indexOf('2a19')!==-1) {
             this.values.battery=utils.getBattery(ev.value)
             return
@@ -430,6 +432,8 @@ methods: {
 
             return
         }
+        
+        this.log.push('Готово')
     },
     animationPlayPause() {//reload animation---crutch, anim is animation to reload        
         this.slidesAnimationObjects.heartRate.pause()
